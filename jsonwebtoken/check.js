@@ -1,4 +1,4 @@
-/***********************************/
+/**********************************/
 /*** Import des module nécessaires */
 const jwt = require('jsonwebtoken')
 
