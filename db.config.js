@@ -24,7 +24,7 @@ db.User.hasMany(db.Cocktail, {foreignKey: 'user_id', onDelete: 'cascade'})
 db.Cocktail.belongsTo(db.User, {foreignKey: 'user_id'})
 
 
-/*********************************/
+/**********************************/
 /*** Synchronisation des modèles */
 // sequelize.sync(err => {
 //     console.log('Database Sync Error', err)
