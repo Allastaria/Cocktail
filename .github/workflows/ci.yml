@@ -6,8 +6,9 @@ on:
   pull_request:
     branches: ["main"]
 
+
 jobs:
-  first:
+  test-dev:
     runs-on: [dev]
 
     steps:
@@ -17,11 +18,11 @@ jobs:
       - name: Fin des tests
         run: echo OK
 
-  second:
-    needs: [first]
-    if: ${{ github.event_name =='push' && github.ref_name == 'main' }}
-    runs-on: [prod]
 
+  deploy-prod:
+    needs: [test-dev]
+    # if: ${{ github.event_name =='push' && github.ref_name == 'main' }}
+    runs-on: [prod]
 
     steps:
       - name: Checkout
