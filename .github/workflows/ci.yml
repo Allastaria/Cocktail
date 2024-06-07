@@ -9,7 +9,7 @@ on:
 
 jobs:
   test-dev:
-    runs-on: [dev]
+    runs-on: dev
 
     steps:
       - name: Checkout
@@ -21,7 +21,7 @@ jobs:
 
   deploy-prod:
     needs: [test-dev]
-    runs-on: [prod]
+    runs-on: prod
 
     steps:
       - name: Checkout
